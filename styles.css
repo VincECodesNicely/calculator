@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +14,7 @@ body {
 .container {
   display: flex;
   width: 30%;
-  height: 500px;
+  height: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,25 +25,49 @@ body {
   border-radius: 10px;
 }
 
+.display-container {
+  display: flex;
+  position: absolute;
+  width: 95%;
+  height: 100px;
+}
+
+.display {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-family: "Lato", sans-serif;
+  border: 1px solid #595e6e;
+}
+
 .grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  position: relative;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   margin-top: auto;
 }
 
 .col {
-  display: flex;
-  flex-direction: column;
-  margin-top: auto;
+  flex: 25%;
 }
 
 button {
   display: flex;
+  width: 5em;
+  height: 50px;
   border-radius: 10px;
+  border: 1px solid;
   font-size: 1.2rem;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   background-color: #7a85a3;
+  border: 2px solid #595e6e;
+  font-weight: bold;
+  margin-top: 5px;
 }
