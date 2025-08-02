@@ -2,7 +2,8 @@ const container = document.querySelector(".container");
 const display = document.querySelector("#display");
 const numberButtons = document.querySelectorAll("[data-num]");
 const operandButtons = document.querySelectorAll("#operand");
-const equals = document.querySelector("#equal");
+const equals = document.querySelector("#equal-btn");
+const decimalPoint = document.querySelector("#decimal");
 let operand = "";
 let numOne;
 let numTwo;
@@ -44,7 +45,7 @@ function operate(numOne, operand, numTwo) {
       result = divide(numOne, numTwo);
       break;
   }
-  return result;
+  return Math.ceil(result * 100) / 100;
 }
 
 numberButtons.forEach((element) => {
@@ -75,6 +76,19 @@ operandButtons.forEach((element) => {
     operand = element.textContent;
     currentInput = "";
   });
+});
+
+document.querySelector("#backspace-btn").addEventListener("click", () => {
+  currentDisplayValue = display.textContent.slice(0, -1);
+  currentInput = currentInput.slice(0, -1);
+  display.textContent = currentDisplayValue;
+});
+
+decimalPoint.addEventListener("click", () => {
+  if (!currentInput.includes(".")) {
+    currentInput += ".";
+    display.textContent += ".";
+  }
 });
 
 document.querySelector("#AC").addEventListener("click", () => {
